@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7398566805773463478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7398566805773463476}
+  - component: {fileID: 7398566805773463477}
+  - component: {fileID: 7398566805773463434}
+  - component: {fileID: 7398566805773463435}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7398566805773463476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398566805773463478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 271.15808, y: 0.13111562, z: 391.98898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7398566805773463477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398566805773463478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0379bce1af7894599d7e7b5c7980f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCombat: 0
+--- !u!114 &7398566805773463434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398566805773463478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4678b461c94094bacead12112cc086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PartyMemberOne: {fileID: 0}
+  PartyMemberTwo: {fileID: 0}
+  PartyWeapons:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &7398566805773463435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398566805773463478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0324b817cd9e7649a346431ce9917b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Potions:
+  - {fileID: 11400000, guid: 99c580afa923d694cafea6dc591b325b, type: 2}
+  - {fileID: 11400000, guid: 2e442d69c7c9e234d9706bf7c64a18fe, type: 2}
+  - {fileID: 11400000, guid: e145e92486e847547a4ce3cdbbed260a, type: 2}
+  Spells:
+  - {fileID: 11400000, guid: 1e43dbd88e6d18e45ad72334ffde22cf, type: 2}
+  - {fileID: 11400000, guid: 40d6ab5da4e3f9646ba9cefa130eaccf, type: 2}
+  - {fileID: 11400000, guid: 16cf0a0bfcce7f548aa62e9b25edb088, type: 2}
+  NormalItems: []
