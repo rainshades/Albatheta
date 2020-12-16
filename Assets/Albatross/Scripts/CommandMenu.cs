@@ -80,6 +80,11 @@ namespace Albatross
             Actions.Clear();
             CurrentMenu = Menus[2];
             Menus[2].SetActive(true);
+
+
+            ItemMenu itemMenu = CurrentMenu.GetComponent < ItemMenu>();
+            itemMenu.LoadMenu();
+
             for (int i = 0; i < CurrentMenu.transform.childCount; i++)
             {
                 CurrentMenu.transform.GetChild(i).gameObject.SetActive(true);
@@ -93,6 +98,10 @@ namespace Albatross
             Actions.Clear();
             CurrentMenu = Menus[1];
             Menus[1].SetActive(true);
+
+            SpellMenu spellMenu = CurrentMenu.GetComponent<SpellMenu>();
+            spellMenu.DrawHand();
+
             for (int i = 0; i < CurrentMenu.transform.childCount; i++)
             {
                 CurrentMenu.transform.GetChild(i).gameObject.SetActive(true);
@@ -107,6 +116,9 @@ namespace Albatross
             Actions.Clear();
             CurrentMenu = Menus[3];
             Menus[3].SetActive(true);
+
+            CourageMenu CMenu = CurrentMenu.GetComponent<CourageMenu>();
+            CMenu.LoadMenu();
 
             for (int i = 0; i < CurrentMenu.transform.childCount; i++)
             {
@@ -129,12 +141,17 @@ namespace Albatross
             }
             else
             {
+                Destroy(Actions[0].gameObject);
+                Actions.RemoveAt(0);
+
+                CurrentMenu.SetActive(false);
                 CurrentMenu = Menus[0];
                 for (int i = 0; i < Menus[0].transform.childCount; i++)
                 {
                     Actions.Add(Menus[0].transform.GetChild(i).GetComponent<CommandItem>());
                 }
                 CurrentMenu = Menus[0];
+                CurrentButton = Actions[0];
             }
         }
 

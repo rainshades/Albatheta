@@ -11,7 +11,7 @@ namespace Albatross
         [SerializeField]
         int count = 0; 
 
-        public List<Drops> Item { get => item; }
+        public List<Drops> Items { get => item; }
         public int NumberOfItem { get => count; }
 
         //What Kind of Drop

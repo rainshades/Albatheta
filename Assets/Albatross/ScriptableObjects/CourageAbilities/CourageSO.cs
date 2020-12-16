@@ -6,6 +6,6 @@ namespace Albatross
     public class CourageSO : Equipment
     {
         public string AnimationName;
-        public int value; 
+        public int damagevalue;
     }
 }

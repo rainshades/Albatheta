@@ -34559,10 +34559,10 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.4
-    functionName: Emit
+  - time: 0.33333334
+    functionName: CourageAttack
     data: 
-    objectReferenceParameter: {fileID: 5985202600165759348, guid: 805055cd23d7cb24b805f85ff61aa757, type: 3}
+    objectReferenceParameter: {fileID: 5985202600165759354, guid: 75be1298495e18344b6bfac44a9e2a34, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

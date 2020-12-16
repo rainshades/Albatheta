@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3686107fb44e3aa4b9bbe59cb88af39b, type: 3}
   m_Name: Blow Away
   m_EditorClassIdentifier: 
-  TypesofEffects: 
-  Cost: 0
+  TypesofEffects: 0d000000
+  Cost: 20
   AnimationName: 
-  value: 0
+  damagevalue: 10
+  Particle: {fileID: 0}

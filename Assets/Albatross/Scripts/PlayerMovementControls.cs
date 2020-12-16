@@ -44,7 +44,7 @@ namespace Albatross
 
         private void Block_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (MovementForce != Vector3.zero)
+            if (MovementForce != Vector3.zero && WalkState == WalkState.Running)
             {
                 if (grounded)
                 {
@@ -58,6 +58,10 @@ namespace Albatross
                 }
                 MovementForce = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * DashDistance;
                 //controller.Move(MoveDirection * Time.deltaTime * MovementSettings.Movement_speed);
+            }
+            else
+            {
+                GetComponent<CharacterCombat>().Block();
             }
         }
 
@@ -78,13 +82,10 @@ namespace Albatross
 
             if (WalkState == WalkState.Running && !inDialog)
             {
-                //Calc for keyboard here:
-                if (Keyboard.current.anyKey.isPressed)
-                {
-                    targetAngle = Mathf.Atan2(MovementForce.x, MovementForce.z) * Mathf.Rad2Deg + Camera.eulerAngles.y;
-                    angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-                    transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                }
+
+                targetAngle = Mathf.Atan2(MovementForce.x, MovementForce.z) * Mathf.Rad2Deg + Camera.eulerAngles.y;
+                angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
                 MovementNormilized = obj.ReadValue<Vector2>().normalized;
 
@@ -133,9 +134,6 @@ namespace Albatross
             /* Find a way to solve this redundance to improve performance
              * Locking it under an if reduces proformance  
              */
-            targetAngle = Mathf.Atan2(MovementForce.x, MovementForce.z) * Mathf.Rad2Deg + Camera.eulerAngles.y;
-            angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             if (KnockbackCounter <= 0)
             {

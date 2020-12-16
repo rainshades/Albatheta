@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cc40530414b73409db78c6cb17a1ab, type: 3}
   m_Name: Health Drop
   m_EditorClassIdentifier: 
-  TypesofEffects: 03000000
+  TypesofEffects: 00000000
   Cost: 0
   ItemToDrop: {fileID: 0}
   RestoreDrop: 0

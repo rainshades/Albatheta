@@ -310,7 +310,7 @@ public class @Player : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7faf79a7-2026-482f-bde6-e5aa3e6db7f1"",
-                    ""path"": ""<Keyboard>/g"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -38,9 +38,10 @@ namespace Albatross
                 if (Equipment is QuickSpell || Equipment is SlowSpell)
                 {
                     PCS.SpawnNewCard(equipment as SpellSO);
+
+                    CommandMenu.Instance.NextAction();
                 }
 
-                FindObjectOfType<CommandMenu>().NextAction();
             }
             else if(equipment is Potions)
             {
@@ -56,11 +57,11 @@ namespace Albatross
                 CourageSO ability = Equipment as CourageSO; 
                 
                 Player.Cast(ability);
-                ability.Effect(ability.value, Player.transform);
+               /* ability.Effect(ability.damage, Player.transform);
                 foreach(EffectType effect in ability.EquipmentEffects)
                 {
                     effect.FireEffect(Player.combatStats);
-                }
+                }*/
                 ani.Play(ability.AnimationName);
             }
         }

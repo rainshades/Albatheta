@@ -4,6 +4,7 @@ namespace Albatross
 {
     public class PlayerCombat : CharacterCombat
     {
+        GameObject go;
 
         private void Start()
         {
@@ -16,7 +17,6 @@ namespace Albatross
             Attacks[Attack_ani_iterator].PlayAnimation();
             PlayerMovementControls PMC = GetComponent<PlayerMovementControls>();
             PMC.EndWalkState();
-            PMC.Thrust();
         }
 
         private void Update()
@@ -33,9 +33,11 @@ namespace Albatross
             CanvasManager.Instance.GameOver();
         }
 
-        public void Emit(ParticleSystem particle)
+        public void CourageAttack(GameObject CourageAttackPrefab)
         {
-            Instantiate(particle, HitBox.position, HitBox.rotation);
+            GameObject go = Instantiate(CourageAttackPrefab, HitBox.position, HitBox.rotation);
+            Physics.IgnoreCollision(go.GetComponent<Collider>(), GetComponent<Collider>());
+            
         }
     }
 }

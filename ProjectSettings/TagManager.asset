@@ -13,6 +13,7 @@ TagManager:
   - PeacePause
   - Treasure Chest
   - Prize
+  - Bullet
   layers:
   - Default
   - TransparentFX

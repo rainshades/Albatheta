@@ -14,7 +14,7 @@ namespace Albatross
         public override void FireEffect(CharacterCombatStats combatStats)
         {
             combatStats.Health -= DamageAmount;
-            GameObject.FindObjectOfType<EnemyUIHealthCheck>().LastEnemyAttacked = combatStats.gameObject;
+            EnemyUIHealthCheck.Instance.LastEnemyAttacked = combatStats.gameObject;
         }
     }
 }

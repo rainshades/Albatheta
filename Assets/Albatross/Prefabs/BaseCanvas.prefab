@@ -824,7 +824,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5526427475230219895}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1590,7 +1590,6 @@ MonoBehaviour:
   SelectColor: {r: 0.97311616, g: 1, b: 0, a: 1}
   NormalColor: {r: 0, g: 0.45882356, b: 1, a: 1}
   PlayerCamera: {fileID: 0}
-  ItemMenu: {fileID: 5526427476632118220}
 --- !u!114 &5526427474583168352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3372,9 +3371,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5526427474931089873}
-  - {fileID: 5526427476042300836}
   - {fileID: 5526427476632118223}
   - {fileID: 1529101515}
+  - {fileID: 5526427476042300836}
   m_Father: {fileID: 5526427475828366861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4900,8 +4899,6 @@ MonoBehaviour:
   SelectColor: {r: 0, g: 1, b: 0.0167377, a: 1}
   NormalColor: {r: 0, g: 0.46274513, b: 1, a: 1}
   PlayerCamera: {fileID: 0}
-  SpellCardGameObject: {fileID: 0}
-  SpellMenu: {fileID: 5526427476042300837}
 --- !u!114 &5526427475987126442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4959,11 +4956,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5526427475230219895}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 177, y: 0}
+  m_AnchoredPosition: {x: 194.30627, y: -5.4606934}
   m_SizeDelta: {x: 215.69467, y: 204.81992}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &5526427476042300839
@@ -6195,7 +6192,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5526427475230219895}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

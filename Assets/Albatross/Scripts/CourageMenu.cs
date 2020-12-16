@@ -2,11 +2,11 @@
 {
     public class CourageMenu : SecondaryMenus
     {
-        private void Awake()
+        public void LoadMenu()
         {
-            if(transform.childCount == 0)
+            if (transform.childCount == 0)
             {
-                foreach(CourageSO Ability in Inventory.CourageSkills)
+                foreach (CourageSO Ability in Inventory.CourageSkills)
                 {
                     InstantiateSecMenu(Ability);
                 }

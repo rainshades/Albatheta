@@ -1,13 +1,15 @@
-﻿namespace Albatross
+﻿using UnityEngine; 
+namespace Albatross
 {
     public class SpellMenu : SecondaryMenus
     {
-        private void Awake()
+        public void DrawHand()
         {
             if (transform.childCount == 0)
-                foreach (SpellSO Spell in Inventory.Spells)
+                for (int i = 0; i < 4; i++)
                 {
-                    InstantiateSecMenu(Spell);
+                    int cardPull = Random.Range(0, Inventory.Spells.Count);
+                    InstantiateSecMenu(Inventory.Spells[i] as SpellSO);
                 }
         }
     }

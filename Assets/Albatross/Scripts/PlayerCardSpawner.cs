@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Albatross
 {
@@ -11,6 +8,8 @@ namespace Albatross
 
         GameObject[] Enemies;
 
+        GameObject LastSpellCast; 
+
         public void SpawnNewCard(SpellSO equipment)
         {
             CardPrefab.GetComponent<SpellCardObject>().SetCard(equipment);
@@ -19,6 +18,7 @@ namespace Albatross
             GameObject go = Instantiate(CardPrefab, transform);
             
             go.transform.SetParent(null);
+            LastSpellCast = go; 
         }
 
         private void Update()

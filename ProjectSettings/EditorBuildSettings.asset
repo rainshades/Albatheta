@@ -6,10 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Albatross/Scenes/Start.unity
+    guid: 033e101214d790b45bf5f84d5838cb4e
+  - enabled: 1
     path: Assets/Albatross/Scenes/Road to Sunset Rock.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Albatross/Scenes/Sunset Rock.unity
     guid: 181a0747c7b9a754c90721436f0e9ed0
+  - enabled: 1
+    path: Assets/Albatross/Scenes/Hellendale.unity
+    guid: 60110d174f28b7549bab01b6572b311f
+  - enabled: 1
+    path: Assets/Albatross/Scenes/Road to Hellindale.unity
+    guid: fa010257d896f1a429d286812dbe4e7a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 726d99f4a5ac8464e863575365e5d16b, type: 2}

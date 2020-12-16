@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypesofEffects: 00000000
   Cost: 0
-  full: 1
+  full: 0
   max_restore_value: 50
-  resevoir: 50
+  resevoir: 30

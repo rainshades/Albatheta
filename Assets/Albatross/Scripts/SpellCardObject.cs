@@ -21,9 +21,12 @@ namespace Albatross
         [SerializeField]
         ParticleSystem ImpactParticleEffect = null;
 
+        [SerializeField]
         GameObject target;
 
-        public LayerMask HitLayers; 
+        public LayerMask HitLayers;
+
+        float MaxTimeAlive = 5.0f;
 
         public GameObject Target { set => target = value; }
 
@@ -38,10 +41,21 @@ namespace Albatross
 
         private void FixedUpdate()
         {
+            MaxTimeAlive -= Time.deltaTime; 
+
+            if(MaxTimeAlive <= 0)
+            {
+                Debug.Log("Spell Fizzle");
+                Destroy(gameObject);
+            }
+
+
             if (SpellCard is QuickSpell)
             {
                 rbd.constraints = RigidbodyConstraints.FreezePositionY;
                 rbd.useGravity = false;
+
+                target = EnemyUIHealthCheck.Instance.LastEnemyAttacked;
 
                 if (target == null)
                 {
@@ -56,21 +70,22 @@ namespace Albatross
                             Target = enemy;
                         }
                     }
+
                 }
 
-                transform.LookAt(target.transform);
+                if (target != null)
+                {
+                    transform.LookAt(target.transform);
+                    transform.Translate(Vector3.forward * cardSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    Debug.Log("Targets empty");
+                }
 
-                transform.Translate(Vector3.forward * cardSpeed * Time.deltaTime);
             }
 
-            if (SpellCard is EquipSpell)
-            {
-                //TODO
-                //Play Equipt Animation
-                //Does Equipt Spell Effect
-            }
-
-            if (SpellCard is SlowSpell)
+            if(SpellCard is SlowSpell)
             {
                 rbd.velocity += cardSpeed * cardSpeed * Vector3.forward * Time.deltaTime;
             }
@@ -88,7 +103,7 @@ namespace Albatross
                 foreach(EffectType effect in SpellCard.EquipmentEffects)
                 {
                     CharacterCombatStats stat = collision.gameObject.GetComponent<CharacterCombatStats>();
-                    if(stat == null)
+                    if (stat == null)
                     {
                         stat = collision.transform.GetComponentInChildren<CharacterCombatStats>();
                     }
@@ -102,15 +117,20 @@ namespace Albatross
                         Debug.LogWarning("Character Combat Stat not found");
                     }
                 }
-                Destroy(gameObject);
             }
 
             if (collision.transform.CompareTag("Ground") && SpellCard is SlowSpell)
             {
                 Instantiate(ImpactParticleEffect, transform.position, Quaternion.identity);
                 SpellCard.Effect(SpellCard.Damage, SpellCard.AreaOfEffect, HitLayers);
-                Destroy(gameObject);
             }
+            else if (collision.transform.CompareTag("Ground"))
+            {
+                Instantiate(ImpactParticleEffect, transform.position, Quaternion.identity);
+            }
+
+
+            Destroy(gameObject);
         }
 
         public void SetCard(SpellSO Spell)

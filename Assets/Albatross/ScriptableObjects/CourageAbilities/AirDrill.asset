@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3686107fb44e3aa4b9bbe59cb88af39b, type: 3}
   m_Name: AirDrill
   m_EditorClassIdentifier: 
-  TypesofEffects: 01000000
+  TypesofEffects: 0100000002000000
   Cost: 10
   AnimationName: AirDrill
-  value: 0
+  damagevalue: 30
